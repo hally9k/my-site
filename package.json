@@ -1,0 +1,88 @@
+{
+  "name": "my-site",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "jest",
+    "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions=js --no-watchman",
+    "lint": "eslint src --config ./.eslintrc.json",
+    "precommit": "lint-staged",
+    "prepush": "yarn test",
+    "updateSchema": "graphql get-schema"
+  },
+  "lint-staged": {
+    "*.+(js)": [
+      "yarn lint",
+      "git add"
+    ]
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "modulePaths": [
+      "<rootDir>/src/",
+      "<rootDir>/test/",
+      "<rootDir>/node_modules/"
+    ]
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^6.3.1",
+    "classnames": "^2.2.5",
+    "expo": "^27.0.1",
+    "flow-bin": "^0.76.0",
+    "jwt-decode": "^2.2.0",
+    "prop-types": "^15.6.2",
+    "react": "16.3.1",
+    "react-color": "^2.14.1",
+    "react-dom": "16.3.1",
+    "react-native": "~0.55.2",
+    "react-native-material-ui": "^1.30.1",
+    "react-navigation": "^2.7.0",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-preset-flow": "^6.23.0",
+    "detox": "^8.0.0",
+    "detox-expo-helpers": "^0.2.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-expo": "^6.0.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-compat": "^2.3.0",
+    "eslint-plugin-cypress": "^2.0.1",
+    "eslint-plugin-filenames": "^1.2.0",
+    "eslint-plugin-flowtype": "^2.49.3",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
+    "flow-typed": "^2.5.1",
+    "husky": "^0.14.3",
+    "jest-expo": "~27.0.0",
+    "lint-staged": "^7.1.1",
+    "prettier-eslint-cli": "^4.7.1",
+    "react-native-scripts": "1.14.0",
+    "react-test-renderer": "16.3.1",
+    "regenerator-runtime": "^0.12.0"
+  },
+  "detox": {
+    "test-runner": "jest",
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "e2e/Exponent-2.3.0.app",
+        "type": "ios.simulator",
+        "name": "iPhone 7"
+      }
+    }
+  }
+}

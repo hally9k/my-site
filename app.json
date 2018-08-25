@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "sdkVersion": "27.0.0",
+    "name": "My Site",
+    "icon": "./icon.png",
+    "version": "0.0.1",
+    "slug": "my-site",
+    "ios": {
+      "bundleIdentifier": "com.beaux.my-site"
+    }
+  }
+}
